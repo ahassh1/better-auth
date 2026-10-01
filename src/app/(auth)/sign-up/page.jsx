@@ -30,7 +30,7 @@ const SignUp = () => {
     console.log(signUpData, error);
   };
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center min-h-screen">
       <Form className="w-full max-w-96" onSubmit={onSubmit}>
         <Fieldset>
           <Fieldset.Legend>Profile Settings</Fieldset.Legend>

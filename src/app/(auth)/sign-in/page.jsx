@@ -18,7 +18,7 @@ const SignIn = () => {
 console.log(signInData, error)
   };
     return (
-        <div className='flex justify-center'>
+        <div className='flex justify-center items-center min-h-screen'>
               <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
       <TextField
         isRequired
