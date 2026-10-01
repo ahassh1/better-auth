@@ -66,9 +66,13 @@ const { data: session } = authClient.useSession() //   session mangement
               Dashboard
             </Link>
           </li>
-          <li>
-            <Link href="#">Pricing</Link>
+         {
+            session?.user &&(
+                 <li>
+            <Link href="/profile">Profile</Link>
           </li>
+            )
+         }
         </ul>
         <div className="hidden items-center gap-4 md:flex">
             {/* signout toggle logic */}
@@ -97,11 +101,13 @@ const { data: session } = authClient.useSession() //   session mangement
                 Dashboard
               </Link>
             </li>
-            <li>
-              <Link href="#" className="block py-2">
-                Pricing
-              </Link>
-            </li>
+               {
+            session?.user &&(
+                 <li>
+            <Link href="/profile">Profile</Link>
+          </li>
+            )
+         }
             <li className="mt-4 flex flex-col gap-2 border-t border-separator pt-4">
                   {
             session?.user?<><Button onClick={handleSignOut}>Log out</Button></> : <> <Link href="/sign-in" className="block py-2">
