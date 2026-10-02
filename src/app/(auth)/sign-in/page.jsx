@@ -15,8 +15,12 @@ const SignIn = () => {
     password: data.password,
     callbackURL: "/"
 });
-console.log(signInData, error)
   };
+  const login = async () => {
+  const data = await authClient.signIn.social({
+    provider: "google",
+  });
+};
     return (
         <div className='flex justify-center items-center min-h-screen'>
               <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
@@ -66,6 +70,7 @@ console.log(signInData, error)
           Reset
         </Button>
       </div>
+       <Button onClick={login}>Google Sign In</Button>
     </Form>
         </div>
     );
